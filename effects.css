@@ -1,0 +1,73 @@
+/* Canvas 粒子背景 */
+#particle-canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+pointer-events:none;
+}
+
+/* Loading 畫面 */
+#loading-screen{
+position:fixed;
+inset:0;
+background:radial-gradient(circle at center,#1e1b4b,#020617 70%);
+z-index:999999;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:34px;
+font-weight:bold;
+letter-spacing:3px;
+text-shadow:0 0 15px #38bdf8,0 0 35px #a855f7,0 0 55px #f472b6;
+transition:opacity .8s ease,visibility .8s ease;
+}
+
+#loading-screen.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.loading-text{
+animation:loadingPulse 1.2s infinite alternate;
+}
+
+@keyframes loadingPulse{
+0%{transform:scale(1);opacity:.75;}
+100%{transform:scale(1.08);opacity:1;}
+}
+
+/* 捲動進度條 */
+#scroll-progress{
+position:fixed;
+top:0;
+left:0;
+height:6px;
+width:0%;
+background:linear-gradient(90deg,#38bdf8,#a855f7,#f472b6,#22d3ee);
+z-index:999998;
+box-shadow:0 0 15px #38bdf8,0 0 25px #f472b6;
+}
+
+/* 交錯式進場動畫 */
+.reveal{
+opacity:0;
+transform:translateY(45px) scale(.96);
+transition:opacity .85s ease,transform .85s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+.reveal:nth-child(odd){
+transition-delay:.08s;
+}
+
+.reveal:nth-child(even){
+transition-delay:.18s;
+}

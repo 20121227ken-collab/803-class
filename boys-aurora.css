@@ -1,0 +1,12 @@
+/* 703 boys: pink · green · blue aurora starfield. Scoped to boys pages. */
+.aurora-backdrop{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 52% 80%,#153e47 0%,#101e34 48%,#080e21 100%)}
+.aurora-backdrop::before{content:"";position:absolute;inset:-15%;background:radial-gradient(ellipse at 20% 26%,rgba(239,128,187,.17),transparent 35%),radial-gradient(ellipse at 72% 18%,rgba(102,188,246,.17),transparent 39%),radial-gradient(ellipse at 54% 75%,rgba(87,214,174,.14),transparent 43%);filter:blur(35px)}
+.aurora-backdrop::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,12,27,.07),rgba(5,11,23,.24));pointer-events:none}
+.aurora-glow{position:absolute;width:86vmax;height:69vmax;filter:blur(88px);opacity:.69;border-radius:45%;will-change:transform;animation:auroraDrift 27s ease-in-out infinite alternate}
+.aurora-one{left:-35%;top:-40%;background:radial-gradient(ellipse,rgba(250,130,192,.76) 0%,rgba(189,123,220,.36) 39%,transparent 72%)}
+.aurora-two{right:-38%;top:-14%;background:radial-gradient(ellipse,rgba(105,194,249,.78) 0%,rgba(91,135,220,.35) 42%,transparent 73%);animation-duration:33s;animation-delay:-13s}
+.aurora-three{left:7%;bottom:-54%;background:radial-gradient(ellipse,rgba(94,221,176,.79) 0%,rgba(58,170,181,.38) 43%,transparent 73%);animation-duration:37s;animation-delay:-21s;opacity:.73}
+@keyframes auroraDrift{0%{transform:translate3d(-6%,-3%,0) rotate(-8deg) scale(1)}50%{transform:translate3d(9%,7%,0) rotate(8deg) scale(1.14)}100%{transform:translate3d(-4%,12%,0) rotate(-5deg) scale(1)}}
+#aurora-particles{position:fixed;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;opacity:.96}
+.topbar{z-index:100!important}.page{position:relative;z-index:2!important}
+@media(prefers-reduced-motion:reduce){.aurora-glow{animation:none!important}#aurora-particles{display:none}}

@@ -1,0 +1,12 @@
+/* 803 unified night-sky aurora: subdued pink / mint / blue */
+.aurora-backdrop{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 55% 70%,#101e31 0%,#0a1225 55%,#050914 100%)}
+.aurora-backdrop::before{content:"";position:absolute;inset:-15%;background:radial-gradient(ellipse at 17% 32%,rgba(220,116,171,.105),transparent 38%),radial-gradient(ellipse at 80% 28%,rgba(95,164,218,.12),transparent 39%),radial-gradient(ellipse at 49% 82%,rgba(80,188,151,.095),transparent 43%);filter:blur(44px)}
+.aurora-backdrop::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,6,18,.28),transparent 46%,rgba(3,7,16,.32));pointer-events:none}
+.aurora-glow{position:absolute;width:84vmax;height:65vmax;filter:blur(105px);opacity:.47;border-radius:48%;will-change:transform;animation:auroraDrift 34s ease-in-out infinite alternate}
+.aurora-one{left:-37%;top:-39%;background:radial-gradient(ellipse,rgba(222,121,175,.48),rgba(161,105,184,.15) 40%,transparent 73%)}
+.aurora-two{right:-37%;top:-20%;background:radial-gradient(ellipse,rgba(94,171,224,.51),rgba(74,113,177,.17) 42%,transparent 74%);animation-duration:41s;animation-delay:-16s}
+.aurora-three{left:4%;bottom:-52%;background:radial-gradient(ellipse,rgba(83,197,154,.50),rgba(53,133,149,.17) 43%,transparent 74%);animation-duration:46s;animation-delay:-24s;opacity:.49}
+@keyframes auroraDrift{0%{transform:translate3d(-5%,-4%,0) rotate(-7deg) scale(1)}50%{transform:translate3d(8%,6%,0) rotate(7deg) scale(1.1)}100%{transform:translate3d(-3%,10%,0) rotate(-4deg) scale(1)}}
+#aurora-particles{position:fixed;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;opacity:1}
+.topbar{z-index:100!important}.page{position:relative;z-index:2!important}
+@media(prefers-reduced-motion:reduce){.aurora-glow{animation:none!important}#aurora-particles{display:none}}

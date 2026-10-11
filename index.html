@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>803株式會社｜我們的青春故事</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden}body{font-family:-apple-system,BlinkMacSystemFont,"Microsoft JhengHei",sans-serif;background:#101e34}#contentFrame{display:block;position:fixed;inset:0;width:100%;height:100%;height:100dvh;border:0;background:#101e34}#entry-overlay{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at 25% 35%,rgba(100,207,170,.25),transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(231,137,188,.24),transparent 60%),#101e24;transition:opacity .35s,visibility .35s}#entry-overlay.is-hidden{opacity:0;visibility:hidden;pointer-events:none}.entry-panel{position:relative;width:min(470px,100%);padding:46px 32px;border-radius:26px;background:#f0eee7;color:#26362f;text-align:center;box-shadow:0 24px 75px rgba(0,0,0,.25)}.entry-kicker{font-size:12px;letter-spacing:2px;color:#60776d}.entry-panel h1{font-size:clamp(29px,5vw,42px);margin:20px 0 12px}.entry-panel p{color:#67766c;line-height:1.9;margin:0 0 26px}.entry-button{position:relative;display:block;width:100%;border:0;border-radius:100px;padding:17px 16px;background:#26362f;color:white;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation}.entry-button:hover{background:#3e5849}.entry-button:focus-visible{outline:3px solid #967ebc;outline-offset:4px}.entry-note{display:block;margin-top:16px;color:#7b877e;font-size:12px}#skipMusic{border:0;background:transparent;color:#526b5d;text-decoration:underline;margin-top:12px;cursor:pointer;font-size:13px}#entry-overlay[hidden]{display:none!important}@media(prefers-reduced-motion:reduce){#entry-overlay{transition:none}}
+</style>
+</head>
+<body>
+<audio id="bgm" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
+<iframe id="contentFrame" name="contentFrame" src="home.html" title="803株式會社網站內容"></iframe>
+<div id="entry-overlay" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
+ <div class="entry-panel">
+  <div class="entry-kicker">WELCOME TO CLASS 803</div>
+  <h1 id="entryTitle">803株式會社.</h1>
+  <p>不只是一個班級，<br>是我們共同寫下的青春故事。</p>
+  <button type="button" class="entry-button" id="enterButton">♫ 開啟音樂，進入803 ↗</button>
+  <button type="button" id="skipMusic">不播放音樂，直接進入</button>
+  <span class="entry-note">進入後可隨時播放或暫停音樂</span>
+ </div>
+</div>
+<script>
+(()=>{
+ 'use strict';
+ const audio=document.getElementById('bgm');
+ const overlay=document.getElementById('entry-overlay');
+ const enter=document.getElementById('enterButton');
+ const skip=document.getElementById('skipMusic');
+ let entered=false;
+ audio.volume=.45;
+ function finishEntry(){if(entered)return;entered=true;overlay.classList.add('is-hidden');setTimeout(()=>{overlay.hidden=true},400)}
+ function tryPlay(){try{const result=audio.play();if(result&&typeof result.catch==='function')result.catch(err=>console.warn('音樂無法播放，可用音樂按鈕重試：',err))}catch(err){console.warn('音樂播放失敗：',err)}}
+ enter.addEventListener('click',()=>{finishEntry();tryPlay()});
+ skip.addEventListener('click',finishEntry);
+ window.toggleBgm=()=>{if(audio.paused){tryPlay()}else{audio.pause()}return !audio.paused};
+ window.getBgmState=()=>({playing:!audio.paused,volume:audio.volume});
+ window.addEventListener('message',event=>{if(event.source!==document.getElementById('contentFrame').contentWindow||event.origin!==location.origin)return;if(event.data?.type==='803:toggleMusic')window.toggleBgm()});
+})();
+</script>
+</body>
+</html>
