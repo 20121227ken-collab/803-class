@@ -1,219 +1,283 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>803 男生版巨星介紹</title><link rel="stylesheet" href="shared-nav.css"><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>803 男生版巨星介紹</title><style>
 
 :root{color-scheme:dark;--cyan:#7dd3fc;--muted:#cbd5e1}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#e8f3ff;font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;background:radial-gradient(ellipse at 50% 0%,#142857 0%,#071329 43%,#030817 100%);min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 13% 20%,#34b8ff28,transparent 22%),radial-gradient(circle at 83% 48%,#9d4cff21,transparent 24%);z-index:-1}.wrap{width:min(1320px,92%);margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0}.brand{font-weight:800;letter-spacing:.03em;font-size:17px}.back,.smalllink{color:#bfe8ff;text-decoration:none;border:1px solid #81c8ff55;border-radius:999px;padding:9px 15px;background:#ffffff0a}.back:hover,.smalllink:hover{background:#ffffff1a}.heading{text-align:center;padding:24px 0 38px}.eyebrow{font-size:12px;letter-spacing:.24em;color:#94c8ed}.heading h1{margin:12px 0 8px;font-size:clamp(30px,4vw,53px);color:#81d5ff;text-shadow:0 0 24px #28a7ff80}.heading p{color:#bbd2e9;margin:0}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;padding-bottom:70px}.card{display:flex;flex-direction:column;align-items:center;min-height:385px;border:1px solid #84bfff2e;border-radius:28px;padding:26px 21px;background:linear-gradient(155deg,#121d34ef,#080e21ed);box-shadow:0 12px 30px #0005,0 0 24px #1e85ff23;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}.card:hover,.card:focus-visible{transform:translateY(-7px);box-shadow:0 18px 36px #0008,0 0 28px #5177ff77;outline:none}.avatar{width:150px;height:150px;border-radius:50%;padding:4px;background:linear-gradient(120deg,#1cbcff,#3268ff,#ae5cff);box-shadow:0 0 23px #248dffab,0 0 38px #9448ff5e;flex:none}.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#050c1e;display:block}.num{font-size:12px;letter-spacing:.14em;color:#9ab7d8;margin-top:24px}.name{color:#85d4ff;font-weight:750;font-size:20px;text-align:center;margin:6px 0 12px;overflow-wrap:anywhere}.excerpt{color:#d0deef;line-height:1.75;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;text-align:left;width:100%}.more{margin-top:auto;padding-top:18px;font-size:13px;color:#86d9ff}.footer{border-top:1px solid #a8d7ff26;color:#9db4cc;padding:22px 0 34px;display:flex;gap:15px;justify-content:space-between;flex-wrap:wrap;font-size:13px}.footer a{color:#bde8ff;text-decoration:none}.profile{width:min(940px,92%);margin:40px auto 80px;display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:center;border:1px solid #8bbdff35;border-radius:30px;padding:55px;background:linear-gradient(145deg,#111d36ee,#090f23f0);box-shadow:0 20px 60px #0008}.profile .avatar{width:min(100%,280px);height:auto;aspect-ratio:1}.profile .num{margin:0}.profile h1{color:#83d4ff;font-size:clamp(30px,4vw,48px);line-height:1.2;margin:15px 0 24px;overflow-wrap:anywhere}.profile .intro{font-size:17px;line-height:2;white-space:pre-wrap;color:#e1e9f6}.profile .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:35px}.missing{padding:60px;text-align:center}.dots{position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(#5ec9ff9e 1px,transparent 2px),radial-gradient(#a47dff99 1px,transparent 2px);background-size:190px 220px,270px 260px;background-position:20px 10px,95px 130px;opacity:.4}@media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{padding:20px 12px;min-height:315px;border-radius:20px}.avatar{width:115px;height:115px}.name{font-size:17px}.excerpt{font-size:13px}.profile{grid-template-columns:1fr;padding:28px;gap:30px;margin:15px auto 50px;text-align:center}.profile .avatar{margin:auto;width:210px}.profile .actions{justify-content:center}}@media(max-width:380px){.grid{grid-template-columns:1fr}.card{min-height:0}.excerpt{text-align:center}}
 
 /* Aurora background synchronized with homepage, cards remain above particles */
+
 body{background:#111d24;color:#e8f3ff}
+
 body:before,.dots{display:none!important}
+
 .aurora-backdrop{z-index:0!important}
+
 #aurora-particles{z-index:1!important}
+
 body>.wrap,body>main{position:relative;z-index:2}
+
 .topbar{z-index:100!important}
+
 .topbar .brand{color:#f5f1e8}
+
 .topbar .nav-link,.topbar .nav-toggle{font-size:14px}
+
 .topbar .dropdown,.topbar .search-panel,.topbar .mobile-panel{position:absolute;z-index:120}
+
 @media(max-width:850px){.topbar .mobile-panel{position:relative}}
 
 /* 803 soft aurora palette — shared by directory and profile */
+
 :root{--boy-ink:#edf2ed;--boy-soft:#c4d4cb;--boy-mint:#d2e8db;--boy-accent:#a5cfc3;--boy-line:rgba(193,220,207,.22)}
+
 body{color:var(--boy-ink)}
+
 .heading{padding:30px 0 40px}
+
 .heading .eyebrow{color:#b4d5c8;letter-spacing:.2em}
+
 .heading h1{color:#e4f0e7;text-shadow:0 3px 22px rgba(120,191,166,.14);font-weight:750;letter-spacing:.025em}
+
 .heading p{color:#c9d7ce}
+
 .grid{gap:25px}
+
 .card{background:linear-gradient(155deg,rgba(34,55,51,.91),rgba(23,37,39,.9));border:1px solid var(--boy-line);box-shadow:0 12px 32px rgba(5,18,17,.22),inset 0 1px rgba(255,255,255,.045);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+
 .card:hover,.card:focus-visible{transform:translateY(-5px);border-color:rgba(190,226,211,.5);box-shadow:0 18px 38px rgba(5,18,17,.3),0 0 25px rgba(130,190,168,.12);outline:none}
+
 .avatar{background:linear-gradient(135deg,#92c9c0 4%,#a8c9da 52%,#b8a8d3 100%);box-shadow:0 0 0 5px rgba(167,211,195,.075),0 0 26px rgba(143,200,188,.21),0 0 38px rgba(176,155,205,.11)}
+
 .avatar img{background:#1b2b2c}
+
 .num{color:#adc9bc}
+
 .name{color:#e0eee4;text-shadow:none;font-weight:700}
+
 .excerpt{color:#d4e0d8;line-height:1.85}
+
 .more{color:#a9d8c9}
+
 .back,.smalllink{color:#e1efe7;border-color:rgba(177,216,197,.32);background:rgba(235,250,239,.065)}
+
 .back:hover,.smalllink:hover{background:rgba(213,237,221,.15)}
+
 .footer{border-top-color:var(--boy-line);color:#b8cbc0}.footer a{color:#cce9da}
+
 .profile{background:linear-gradient(145deg,rgba(37,57,52,.93),rgba(22,37,39,.93));border:1px solid var(--boy-line);box-shadow:0 20px 55px rgba(6,20,18,.3);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}
+
 .profile h1{color:#e3f0e7;text-shadow:none}.profile .intro{color:#e0e9e1}.profile .num{color:#b8d3c4}
+
 @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 
-
 /* Final 803 editorial aurora tuning — shared by directory and profile */
+
 :root{--boy-ink:#f3f5f3;--boy-soft:#cdd7d2;--boy-accent:#b9dcf3;--boy-line:rgba(184,215,201,.23)}
+
 .heading h1{color:#f3f5f3;text-shadow:0 3px 24px rgba(142,194,174,.12);letter-spacing:.015em}
+
 .heading p{color:#cdd7d2}
+
 .card{background:linear-gradient(150deg,rgba(36,57,52,.91),rgba(25,43,42,.91));border:1px solid rgba(185,218,203,.24);box-shadow:0 14px 32px rgba(4,18,18,.27),inset 0 1px 0 rgba(255,255,255,.055)}
+
 .card:hover,.card:focus-visible{border-color:rgba(180,219,216,.53);box-shadow:0 20px 42px rgba(4,18,18,.35),0 0 24px rgba(162,202,198,.13)}
+
 .avatar{background:linear-gradient(135deg,#95d3c3 0%,#a5c8df 55%,#c6b2d9 100%);box-shadow:0 0 0 4px rgba(163,210,196,.08),0 0 24px rgba(142,202,190,.19),0 0 32px rgba(198,178,217,.1)}
+
 .name{color:#e7efeb;font-weight:730}.excerpt{color:#cdd7d2}.num{color:#b6cec1}
+
 .more{color:#b9dcf3;font-weight:650;transition:color .2s ease}.card:hover .more,.card:focus-visible .more{color:#fff}
+
 .profile{background:linear-gradient(145deg,rgba(36,57,52,.94),rgba(23,40,39,.94));border-color:rgba(185,218,203,.26)}
+
 .profile h1{color:#e7efeb}.profile .intro{color:#dce6df}
+
 .back,.smalllink{color:#b9dcf3;border-color:rgba(185,220,243,.35)}
+
 .back:hover,.smalllink:hover{color:#fff;border-color:rgba(225,240,249,.6)}
+
 .footer a{color:#b9dcf3}
+
 @media(prefers-reduced-motion:reduce){.card,.more{transition:none}}
 
 /* Transparent glass-free cards: let homepage aurora and particles show through. */
+
 .card, .profile {
+
   background: transparent !important;
+
   background-image: none !important;
+
   -webkit-backdrop-filter: none !important;
+
   backdrop-filter: none !important;
+
   border: 1px solid rgba(205,235,222,.32) !important;
+
   box-shadow: 0 10px 30px rgba(4,20,19,.12) !important;
+
 }
+
 .card:hover, .card:focus-visible {
+
   background: rgba(255,255,255,.035) !important;
+
   border-color: rgba(205,235,222,.66) !important;
+
   box-shadow: 0 15px 35px rgba(4,20,19,.18) !important;
+
 }
+
 .profile { box-shadow: 0 12px 35px rgba(4,20,19,.12) !important; }
 
-
 /* 803 portraits: restrained aurora halo, visible against the starfield */
+
 .avatar{
+
  position:relative;
+
  isolation:isolate;
+
  background:linear-gradient(135deg,#a2e4d0 0%,#a7d8f5 48%,#d7b3eb 100%) !important;
+
  box-shadow:0 0 0 2px rgba(229,248,246,.19),0 0 15px 3px rgba(117,217,197,.35),0 0 30px 6px rgba(135,180,243,.23),0 0 43px 9px rgba(217,158,231,.13) !important;
+
  transition:box-shadow .3s ease,filter .3s ease,transform .3s ease;
+
 }
+
 .avatar::before{
+
  content:"";position:absolute;inset:-10px;border-radius:50%;pointer-events:none;z-index:-1;
+
  background:conic-gradient(from 30deg,rgba(144,230,211,.20),rgba(155,193,247,.18),rgba(227,171,229,.18),rgba(144,230,211,.20));
+
  filter:blur(13px);
+
 }
+
 .card:hover .avatar,.card:focus-visible .avatar{
+
  box-shadow:0 0 0 2px rgba(238,253,251,.34),0 0 21px 5px rgba(117,217,197,.47),0 0 39px 9px rgba(135,180,243,.31),0 0 52px 12px rgba(217,158,231,.20) !important;
+
  transform:scale(1.025);
+
 }
+
 @media(prefers-reduced-motion:reduce){.avatar{transition:none}}
 
-</style><link rel="stylesheet" href="aurora.css"><script src="aurora.js" defer></script></head><body><div class="aurora-backdrop" aria-hidden="true"><div class="aurora-glow aurora-one"></div><div class="aurora-glow aurora-two"></div><div class="aurora-glow aurora-three"></div></div><canvas id="aurora-particles" aria-hidden="true"></canvas><header class="topbar">
- <div class="top-inner">
-  <a class="brand" href="home.html" target="contentFrame" aria-label="803首頁">803 <b>株式會社.</b></a>
-  <nav class="desktop-nav" aria-label="主要導覽">
-   <a class="nav-link" href="home.html" target="contentFrame">首頁</a>
-   <button class="nav-toggle" type="button" data-menu="people" aria-expanded="false">班級成員 ⌄</button>
-   <button class="nav-toggle" type="button" data-menu="life" aria-expanded="false">班級生活 ⌄</button>
-   <button class="nav-toggle" type="button" data-menu="campus" aria-expanded="false">校園探索 ⌄</button>
-   <a class="nav-link" href="home.html#quick" target="contentFrame">快速功能</a>
-   <a class="nav-link copyright-nav" href="copyright.html" target="contentFrame">版權與隱私 ↗</a>
-  </nav>
-  <div class="nav-actions">
-   <button class="icon-btn" id="searchButton" type="button" aria-label="搜尋網站" aria-expanded="false">⌕</button>
-   <button class="icon-btn" id="musicButton" type="button" aria-label="切換背景音樂" title="切換背景音樂">♫</button>
-   <button class="icon-btn menu-trigger" id="mobileButton" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
-  </div>
- </div>
- <div class="dropdown" id="dropdown" hidden><div class="dropdown-inner"><div class="dropdown-label" id="dropdownLabel"></div><div class="dropdown-links" id="dropdownLinks"></div></div></div>
- <div class="search-panel" id="searchPanel" hidden><label for="siteSearch">搜尋803網站</label><input id="siteSearch" type="search" placeholder="輸入：男生、女生、課表、榮譽…" autocomplete="off"><div class="search-results" id="searchResults"></div></div>
- <nav class="mobile-panel" id="mobilePanel" aria-label="手機導覽" hidden>
-  <a href="home.html" target="contentFrame">首頁</a><a href="boy.html" target="contentFrame">男生介紹</a><a href="girl.html" target="contentFrame">女生介紹</a><a href="teacher.html" target="contentFrame">導師介紹</a><a href="place.html" target="contentFrame">校園景點</a><a href="home.html#quick" target="contentFrame">快速功能</a><a href="home.html#class-info" target="contentFrame">課表與班級照片</a><a href="copyright.html" target="contentFrame">版權與隱私 ↗</a>
- </nav>
-</header><div class="wrap"><section class="heading"><div class="eyebrow">CLASS 803 / BOYS</div><h1>803男生版巨星介紹</h1><p>14 位同學 · 14 個獨一無二的故事 · 點擊卡片認識我們</p></section><main class="grid" id="boys"></main><footer class="footer"><span>© 2026 803株式會社</span><div><a href="girl.html" target="contentFrame">女生介紹</a>　·　<a href="copyright.html" target="contentFrame">版權與隱私</a></div></footer></div><script>
-(()=>{
- const menus={people:{label:'PEOPLE / 班級成員',links:[['男生介紹','boy.html','14位同學'],['女生介紹','girl.html','13位同學'],['導師介紹','teacher.html','認識我們的導師']]},life:{label:'LIFE / 班級生活',links:[['班級課表','home.html#class-info','每週課程'],['班級合照','home.html#class-photo','共同回憶'],['班級榮譽','home.html#news','英語歌唱比賽']]},campus:{label:'CAMPUS / 校園探索',links:[['校園景點','place.html','探索銘傳國中'],['班級課表','home.html#class-info','查看課表']]} };
- const dropdown=document.getElementById('dropdown'),dropdownLabel=document.getElementById('dropdownLabel'),dropdownLinks=document.getElementById('dropdownLinks');
- const toggles=[...document.querySelectorAll('.nav-toggle')];
- function closeMenus(){dropdown.hidden=true;toggles.forEach(b=>b.setAttribute('aria-expanded','false'))}
- toggles.forEach(btn=>btn.addEventListener('click',()=>{const was=btn.getAttribute('aria-expanded')==='true';closeMenus();if(was)return;const menu=menus[btn.dataset.menu];dropdownLabel.textContent=menu.label;dropdownLinks.replaceChildren();menu.links.forEach(([label,url,desc])=>{const a=document.createElement('a');a.href=url;a.target='contentFrame';a.textContent=label;const small=document.createElement('small');small.textContent=desc;a.appendChild(small);a.addEventListener('click',closeMenus);dropdownLinks.appendChild(a)});dropdown.hidden=false;btn.setAttribute('aria-expanded','true')}));
- const searchButton=document.getElementById('searchButton'),searchPanel=document.getElementById('searchPanel'),siteSearch=document.getElementById('siteSearch'),searchResults=document.getElementById('searchResults');
- const searchable=[['首頁','home.html','803 株式會社'],['男生介紹','boy.html','男生 同學'],['女生介紹','girl.html','女生 同學'],['導師介紹','teacher.html','老師 導師'],['校園景點','place.html','校園 銘傳 景點'],['班級課表','home.html#class-info','課表 課程'],['班級照片','home.html#class-photo','合照 回憶'],['英語歌唱榮譽','home.html#news','比賽 特優 第三名'],['版權與隱私','copyright.html','著作權 肖像 照片 音樂 個資']];
- function renderSearch(){const q=siteSearch.value.trim().toLowerCase();searchResults.replaceChildren();if(!q){const p=document.createElement('p');p.textContent='搜尋頁面名稱或關鍵字。';searchResults.append(p);return}const found=searchable.filter(x=>x.join(' ').toLowerCase().includes(q));if(!found.length){const p=document.createElement('p');p.textContent='找不到符合的項目。';searchResults.append(p);return}found.forEach(([name,url])=>{const a=document.createElement('a');a.textContent=name+' ↗';a.href=url;a.target='contentFrame';a.addEventListener('click',()=>{searchPanel.hidden=true;searchButton.setAttribute('aria-expanded','false')});searchResults.append(a)})}
- searchButton.addEventListener('click',()=>{const open=searchPanel.hidden;searchPanel.hidden=!open;searchButton.setAttribute('aria-expanded',String(open));closeMenus();if(open){siteSearch.focus();renderSearch()}});siteSearch.addEventListener('input',renderSearch);
- const mobileButton=document.getElementById('mobileButton'),mobilePanel=document.getElementById('mobilePanel');mobileButton.addEventListener('click',()=>{mobilePanel.hidden=!mobilePanel.hidden;mobileButton.setAttribute('aria-expanded',String(!mobilePanel.hidden));closeMenus()});mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobilePanel.hidden=true;mobileButton.setAttribute('aria-expanded','false')}));
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenus();searchPanel.hidden=true;mobilePanel.hidden=true;searchButton.setAttribute('aria-expanded','false');mobileButton.setAttribute('aria-expanded','false')}});
- document.addEventListener('click',e=>{if(!e.target.closest('.topbar')){closeMenus();searchPanel.hidden=true;searchButton.setAttribute('aria-expanded','false')}});
- const musicButton=document.getElementById('musicButton');function findAudio(){try{return window.parent.document.querySelector('audio')}catch{return null}}function updateMusic(){const a=findAudio();musicButton.textContent=a&&!a.paused?'♫':'♪';musicButton.title=a?(a.paused?'播放背景音樂':'暫停背景音樂'):'請在網站主頁開啟音樂';musicButton.setAttribute('aria-label',musicButton.title)}musicButton.addEventListener('click',()=>{try{if(window.parent!==window && typeof window.parent.toggleBgm==='function'){window.parent.toggleBgm();setTimeout(updateMusic,120);return}}catch(e){}const a=findAudio();if(!a){alert('請從 index.html 進入網站，才能控制背景音樂。');return}if(a.paused){a.play().catch(()=>alert('瀏覽器阻止音樂播放，請再次點擊音樂鍵。'))}else{a.pause()}setTimeout(updateMusic,120)});updateMusic();
-})();
-</script><script>
-window.BOYS_DATA = [
-  {
-    "id": 1,
-    "name": "旺仔",
-    "intro": "我是803班1號，我熱愛下圍棋雖然棋藝爆爛，但我有認真學，我理科不錯但文科有點\n弱。",
-    "photo": "boy1.jpg"
-  },
-  {
-    "id": 2,
-    "name": "錫箔族變種",
-    "intro": "我姓胡，名字子麒，101年12月23號生，目前就讀銘傳國中七年三班。",
-    "photo": "boy2.jpg"
-  },
-  {
-    "id": 3,
-    "name": "最口愛的熊熊",
-    "intro": "我是熊于綸，我喜歡運動，假日都會跟爸爸一起出去打籃球。",
-    "photo": "boy3.jpg"
-  },
-  {
-    "id": 4,
-    "name": "小黑",
-    "intro": "我是王泊森，我的興趣是畫畫和打球。",
-    "photo": "boy4.jpg"
-  },
-  {
-    "id": 5,
-    "name": "花花",
-    "intro": "我是王濬楊，平常最喜歡打羽球和玩電動。",
-    "photo": "boy5.jpg"
-  },
-  {
-    "id": 6,
-    "name": "老朱",
-    "intro": "我叫朱庭鋐，我是一位學生，家裡有爸媽、阿公阿嬤和弟弟。",
-    "photo": "boy6.jpg"
-  },
-  {
-    "id": 7,
-    "name": "阿公",
-    "intro": "我是余得睿，也可以叫我 Derui 或阿公。",
-    "photo": "boy7.jpg"
-  },
-  {
-    "id": 8,
-    "name": "蘑菇共和國國王",
-    "intro": "哈囉大家好，我是80308。",
-    "photo": "boy8.jpg"
-  },
-  {
-    "id": 9,
-    "name": "衣架",
-    "intro": "我是陳奕嘉。",
-    "photo": "boy9.jpg"
-  },
-  {
-    "id": 10,
-    "name": "草莓男孩",
-    "intro": "我是張恩睿，旺仔超強，勁爽地震。",
-    "photo": "boy10.jpg"
-  },
-  {
-    "id": 11,
-    "name": "山上優雅shanksonyoya",
-    "intro": "我是銘傳知名動作片演員 shanksonyoya，有任何拍片需求都可以找我。",
-    "photo": "boy11.jpg"
-  },
-  {
-    "id": 12,
-    "name": "靖爽胖胖",
-    "intro": "大家好，我是靖爽胖胖。",
-    "photo": "boy12.jpg"
-  },
-  {
-    "id": 13,
-    "name": "臭甲甲",
-    "intro": "大家好，我是蕭承煜，我的興趣是打球。",
-    "photo": "boy13.jpg"
-  },
-  {
-    "id": 14,
-    "name": "大奶維",
-    "intro": "我叫羅子維，出生於2012年10月31日。",
-    "photo": "boy14.jpg"
-  }
-];
+/* Portrait fallback: preserve the halo and show a readable placeholder. */
+.avatar.photo-missing{display:grid;place-items:center;background:linear-gradient(135deg,#264f4a,#344c68,#5b466c)!important}
+.missing-label{font-size:13px;font-weight:650;line-height:1.5;text-align:center;color:#f0f7f4;padding:10px;max-width:100px}
 
-</script><script>const root=document.querySelector('#boys');for(const p of (window.BOYS_DATA || [])){const a=document.createElement('a');a.className='card';a.href='boy-profile.html?id='+p.id;a.target='contentFrame';const avatar=document.createElement('div');avatar.className='avatar';const img=document.createElement('img');img.src=p.photo;img.alt=p.name+'的照片';img.loading='lazy';avatar.append(img);a.append(avatar);for(const [cls,val] of [['num',String(p.id).padStart(2,'0')+' / MEMBER'],['name',p.id+'號 '+p.name],['excerpt',p.intro],['more','查看個人檔案 ↗']]){const e=document.createElement('div');e.className=cls;e.textContent=val;a.append(e)}root.append(a)}</script></body></html>
+/* Mobile star field and meteors: canvas visible above aurora, below content */
+@media(max-width:850px){
+  .aurora-backdrop{position:fixed!important;inset:0!important;z-index:0!important;display:block!important;pointer-events:none}
+  #aurora-particles{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;display:block!important;visibility:visible!important;opacity:1!important;z-index:1!important;pointer-events:none}
+  body{isolation:isolate}
+  .topbar,main,.wrap,.foot,.footer{position:relative;z-index:3}
+  .topbar{position:sticky}
+}
+
+/* Stability fixes: accessible cards and responsive starfield */
+#boys{align-items:stretch}
+#boys .card{min-width:0}
+#boys .avatar img{display:block;width:100%;height:100%;object-fit:cover}
+#aurora-particles{pointer-events:none}
+@media(max-width:850px){
+  .aurora-backdrop{position:fixed;inset:0;pointer-events:none}
+  #aurora-particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+  .topbar{z-index:100}
+  .wrap,main{position:relative;z-index:2}
+}
+</style><link rel="stylesheet" href="aurora.css"><script src="aurora.js" defer></script><link rel="stylesheet" href="shared-nav.css">
+<link rel="stylesheet" href="site-fixes.css">
+</head><body><div class="aurora-backdrop" aria-hidden="true"><div class="aurora-glow aurora-one"></div><div class="aurora-glow aurora-two"></div><div class="aurora-glow aurora-three"></div></div><canvas id="aurora-particles" aria-hidden="true"></canvas><header class="topbar">
+
+ <div class="top-inner">
+
+  <a class="brand" href="home.html" target="contentFrame" aria-label="803首頁">803 <b>株式會社.</b></a>
+
+  <nav class="desktop-nav" aria-label="主要導覽">
+
+   <a class="nav-link" href="home.html" target="contentFrame">首頁</a>
+
+   <button class="nav-toggle" type="button" data-menu="people" aria-expanded="false">班級成員 ⌄</button>
+
+   <button class="nav-toggle" type="button" data-menu="life" aria-expanded="false">班級生活 ⌄</button>
+
+   <button class="nav-toggle" type="button" data-menu="campus" aria-expanded="false">校園探索 ⌄</button>
+
+   <a class="nav-link" href="home.html#quick" target="contentFrame">快速功能</a>
+
+   <a class="nav-link copyright-nav" href="copyright.html" target="contentFrame">版權與隱私 ↗</a>
+
+  </nav>
+
+  <div class="nav-actions">
+
+   <button class="icon-btn" id="searchButton" type="button" aria-label="搜尋網站" aria-expanded="false">⌕</button>
+
+   <button class="icon-btn" id="musicButton" type="button" aria-label="切換背景音樂" title="切換背景音樂">♫</button>
+
+   <button class="icon-btn menu-trigger" id="mobileButton" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
+
+  </div>
+
+ </div>
+
+ <div class="dropdown" id="dropdown" hidden><div class="dropdown-inner"><div class="dropdown-label" id="dropdownLabel"></div><div class="dropdown-links" id="dropdownLinks"></div></div></div>
+
+ <div class="search-panel" id="searchPanel" hidden><label for="siteSearch">搜尋803網站</label><input id="siteSearch" type="search" placeholder="輸入：男生、女生、課表、榮譽…" autocomplete="off"><div class="search-results" id="searchResults"></div></div>
+
+ <nav class="mobile-panel" id="mobilePanel" aria-label="手機導覽" hidden>
+
+  <a href="home.html" target="contentFrame">首頁</a><a href="boy.html" target="contentFrame">男生介紹</a><a href="girl.html" target="contentFrame">女生介紹</a><a href="teacher.html" target="contentFrame">導師介紹</a><a href="place.html" target="contentFrame">校園景點</a><a href="home.html#quick" target="contentFrame">快速功能</a><a href="home.html#class-info" target="contentFrame">課表與班級照片</a><a href="copyright.html" target="contentFrame">版權與隱私 ↗</a>
+
+ </nav>
+
+</header><div class="wrap"><section class="heading"><div class="eyebrow">CLASS 803 / BOYS</div><h1>803男生版巨星介紹</h1><p>14 位同學 · 14 個獨一無二的故事 · 點擊卡片認識我們</p></section><main class="grid" id="boys"></main><footer class="footer"><span>© 2026 803株式會社</span><div><a href="girl.html" target="contentFrame">女生介紹</a>　·　<a href="copyright.html" target="contentFrame">版權與隱私</a></div></footer></div><script>
+
+(()=>{
+
+ const menus={people:{label:'PEOPLE / 班級成員',links:[['男生介紹','boy.html','14位同學'],['女生介紹','girl.html','13位同學'],['導師介紹','teacher.html','認識我們的導師']]},life:{label:'LIFE / 班級生活',links:[['班級課表','home.html#class-info','每週課程'],['班級合照','home.html#class-photo','共同回憶'],['班級榮譽','home.html#news','英語歌唱比賽']]},campus:{label:'CAMPUS / 校園探索',links:[['校園景點','place.html','探索銘傳國中'],['班級課表','home.html#class-info','查看課表']]} };
+
+ const dropdown=document.getElementById('dropdown'),dropdownLabel=document.getElementById('dropdownLabel'),dropdownLinks=document.getElementById('dropdownLinks');
+
+ const toggles=[...document.querySelectorAll('.nav-toggle')];
+
+ function closeMenus(){dropdown.hidden=true;toggles.forEach(b=>b.setAttribute('aria-expanded','false'))}
+
+ toggles.forEach(btn=>btn.addEventListener('click',()=>{const was=btn.getAttribute('aria-expanded')==='true';closeMenus();if(was)return;const menu=menus[btn.dataset.menu];dropdownLabel.textContent=menu.label;dropdownLinks.replaceChildren();menu.links.forEach(([label,url,desc])=>{const a=document.createElement('a');a.href=url;a.target='contentFrame';a.textContent=label;const small=document.createElement('small');small.textContent=desc;a.appendChild(small);a.addEventListener('click',closeMenus);dropdownLinks.appendChild(a)});dropdown.hidden=false;btn.setAttribute('aria-expanded','true')}));
+
+ const searchButton=document.getElementById('searchButton'),searchPanel=document.getElementById('searchPanel'),siteSearch=document.getElementById('siteSearch'),searchResults=document.getElementById('searchResults');
+
+ const searchable=[['首頁','home.html','803 株式會社'],['男生介紹','boy.html','男生 同學'],['女生介紹','girl.html','女生 同學'],['導師介紹','teacher.html','老師 導師'],['校園景點','place.html','校園 銘傳 景點'],['班級課表','home.html#class-info','課表 課程'],['班級照片','home.html#class-photo','合照 回憶'],['英語歌唱榮譽','home.html#news','比賽 特優 第三名'],['版權與隱私','copyright.html','著作權 肖像 照片 音樂 個資']];
+
+ function renderSearch(){const q=siteSearch.value.trim().toLowerCase();searchResults.replaceChildren();if(!q){const p=document.createElement('p');p.textContent='搜尋頁面名稱或關鍵字。';searchResults.append(p);return}const found=searchable.filter(x=>x.join(' ').toLowerCase().includes(q));if(!found.length){const p=document.createElement('p');p.textContent='找不到符合的項目。';searchResults.append(p);return}found.forEach(([name,url])=>{const a=document.createElement('a');a.textContent=name+' ↗';a.href=url;a.target='contentFrame';a.addEventListener('click',()=>{searchPanel.hidden=true;searchButton.setAttribute('aria-expanded','false')});searchResults.append(a)})}
+
+ searchButton.addEventListener('click',()=>{const open=searchPanel.hidden;searchPanel.hidden=!open;searchButton.setAttribute('aria-expanded',String(open));closeMenus();if(open){siteSearch.focus();renderSearch()}});siteSearch.addEventListener('input',renderSearch);
+
+ const mobileButton=document.getElementById('mobileButton'),mobilePanel=document.getElementById('mobilePanel');mobileButton.addEventListener('click',()=>{mobilePanel.hidden=!mobilePanel.hidden;mobileButton.setAttribute('aria-expanded',String(!mobilePanel.hidden));closeMenus()});mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobilePanel.hidden=true;mobileButton.setAttribute('aria-expanded','false')}));
+
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenus();searchPanel.hidden=true;mobilePanel.hidden=true;searchButton.setAttribute('aria-expanded','false');mobileButton.setAttribute('aria-expanded','false')}});
+
+ document.addEventListener('click',e=>{if(!e.target.closest('.topbar')){closeMenus();searchPanel.hidden=true;searchButton.setAttribute('aria-expanded','false')}});
+
+ const musicButton=document.getElementById('musicButton');function findAudio(){try{return window.parent.document.querySelector('audio')}catch{return null}}function updateMusic(){const a=findAudio();musicButton.textContent=a&&!a.paused?'♫':'♪';musicButton.title=a?(a.paused?'播放背景音樂':'暫停背景音樂'):'請在網站主頁開啟音樂';musicButton.setAttribute('aria-label',musicButton.title)}musicButton.addEventListener('click',()=>{try{if(window.parent!==window && typeof window.parent.toggleBgm==='function'){window.parent.toggleBgm();setTimeout(updateMusic,120);return}}catch(e){}const a=findAudio();if(!a){alert('請從 index.html 進入網站，才能控制背景音樂。');return}if(a.paused){a.play().catch(()=>alert('瀏覽器阻止音樂播放，請再次點擊音樂鍵。'))}else{a.pause()}setTimeout(updateMusic,120)});updateMusic();
+
+})();
+
+</script><script src="boys-data.js"></script><script>const root=document.querySelector('#boys');for(const p of (window.BOYS_DATA || [])){const a=document.createElement('a');a.className='card';a.href='boy-profile.html?id='+p.id;a.target='contentFrame';const avatar=document.createElement('div');avatar.className='avatar';const img=document.createElement('img');
+img.alt=p.name+'的照片';img.loading='lazy';img.setAttribute('data-boy',String(p.id));
+const filename=(p.photo||('boy'+p.id+'.jpg')).split('/').pop();
+const base=filename.replace(/\.[^.]+$/,'');
+const paths=['b/'+filename,filename,'b/'+base+'.png',base+'.png','b/'+base+'.jpeg',base+'.jpeg','b/'+base+'.webp',base+'.webp'];
+let photoIndex=0;
+img.addEventListener('error',()=>{
+  photoIndex++;
+  if(photoIndex<paths.length){img.src=paths[photoIndex];return;}
+  img.remove();
+  avatar.classList.add('photo-missing');
+  const label=document.createElement('span');label.className='missing-label';
+  label.textContent='照片尚未提供';avatar.append(label);
+});
+img.src=paths[0];avatar.append(img);a.append(avatar);for(const [cls,val] of [['num',String(p.id).padStart(2,'0')+' / MEMBER'],['name',p.id+'號 '+p.name],['excerpt',p.intro],['more','查看個人檔案 ↗']]){const e=document.createElement('div');e.className=cls;e.textContent=val;a.append(e)}root.append(a)}</script></body></html>

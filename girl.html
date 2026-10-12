@@ -18,7 +18,73 @@
 .profile-card h1{overflow-wrap:anywhere}
 @media(max-width:730px){.card{min-height:325px}.avatar{flex-basis:112px;width:112px;height:112px;min-width:112px;min-height:112px}.profile-card .avatar{flex-basis:180px;width:180px;height:180px;min-width:180px;min-height:180px}}
 @media(max-width:420px){.card{min-height:0}.navlinks{gap:3px}.navlinks a{padding:8px 7px;font-size:12px}}
-</style></head><body><div class="aurora-backdrop" aria-hidden="true"><div class="aurora-glow aurora-one"></div><div class="aurora-glow aurora-two"></div><div class="aurora-glow aurora-three"></div></div><canvas id="aurora-particles" aria-hidden="true"></canvas><header class="topbar"><div class="nav"><a class="brand" href="home.html" target="contentFrame">803 株式會社.</a><nav class="navlinks" aria-label="網站導覽"><a href="home.html" target="contentFrame">首頁</a><a href="boy.html" target="contentFrame">男生介紹</a><a href="girl.html" target="contentFrame" aria-current="page">女生介紹</a><a href="teacher.html" target="contentFrame">導師介紹</a><a href="place.html" target="contentFrame">校園探索</a><a href="copyright.html" target="contentFrame">版權與隱私 ↗</a><button class="music" id="music" type="button" aria-label="切換背景音樂">♫</button></nav></div></header><main class="wrap"><div class="hero"><div class="eyebrow">CLASS 803 / GIRLS</div><h1>803 女生版巨星介紹</h1><p>13 位女孩，13 種閃閃發亮的青春故事。</p><div class="accent"></div></div><section class="grid" aria-label="女生個人檔案"><a class="card" href="girl-profile.html?id=31" target="contentFrame" aria-label="查看31號吳綺芮的個人檔案"><div class="avatar"><img src="g/girl31.jpg" data-girl="31" alt="吳綺芮的照片" loading="lazy"></div><span class="no">NO. 31</span><span class="name">31號 吳綺芮</span><span class="intro">我的興趣是買東西、逛街、吃東西、睡覺、滑手機、在家裡吃旺仔：）</span><span class="more">查看個人檔案 ↗</span></a>
+
+/* 803: match boys' top navigation on every screen */
+.topbar{position:sticky;top:0;z-index:100!important;background:rgba(27,40,36,.91)}
+.topbar .top-inner{display:flex;align-items:center;justify-content:space-between}
+.topbar .brand{font-size:20px;text-decoration:none;color:#f5f1e8}
+.topbar .nav-actions{display:flex;align-items:center;margin-left:auto}
+.topbar .desktop-nav{display:flex;align-items:center}
+.topbar .dropdown[hidden],.topbar .search-panel[hidden],.topbar .mobile-panel[hidden]{display:none!important}
+.topbar .dropdown,.topbar .search-panel,.topbar .mobile-panel{z-index:120}
+@media(max-width:850px){.topbar .desktop-nav{display:none!important}.topbar .menu-trigger{display:inline-flex!important}.topbar .top-inner{min-height:62px}.topbar .mobile-panel:not([hidden]){display:flex!important;position:relative;flex-direction:column}}
+@media(max-width:550px){.topbar .brand{font-size:17px}.topbar .top-inner{min-height:58px}}
+
+/* Mobile star field and meteors: canvas visible above aurora, below content */
+@media(max-width:850px){
+  .aurora-backdrop{position:fixed!important;inset:0!important;z-index:0!important;display:block!important;pointer-events:none}
+  #aurora-particles{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;display:block!important;visibility:visible!important;opacity:1!important;z-index:1!important;pointer-events:none}
+  body{isolation:isolate}
+  .topbar,main,.wrap,.foot,.footer{position:relative;z-index:3}
+  .topbar{position:sticky}
+}
+</style><script src="photo-fallback.js" defer></script><link rel="stylesheet" href="shared-nav.css">
+<link rel="stylesheet" href="site-fixes.css">
+<script src="photo-fallback.js" defer></script></head><body><div class="aurora-backdrop" aria-hidden="true"><div class="aurora-glow aurora-one"></div><div class="aurora-glow aurora-two"></div><div class="aurora-glow aurora-three"></div></div><canvas id="aurora-particles" aria-hidden="true"></canvas><header class="topbar">
+
+ <div class="top-inner">
+
+  <a class="brand" href="home.html" target="contentFrame" aria-label="803首頁">803 <b>株式會社.</b></a>
+
+  <nav class="desktop-nav" aria-label="主要導覽">
+
+   <a class="nav-link" href="home.html" target="contentFrame">首頁</a>
+
+   <button class="nav-toggle" type="button" data-menu="people" aria-expanded="false">班級成員 ⌄</button>
+
+   <button class="nav-toggle" type="button" data-menu="life" aria-expanded="false">班級生活 ⌄</button>
+
+   <button class="nav-toggle" type="button" data-menu="campus" aria-expanded="false">校園探索 ⌄</button>
+
+   <a class="nav-link" href="home.html#quick" target="contentFrame">快速功能</a>
+
+   <a class="nav-link copyright-nav" href="copyright.html" target="contentFrame">版權與隱私 ↗</a>
+
+  </nav>
+
+  <div class="nav-actions">
+
+   <button class="icon-btn" id="searchButton" type="button" aria-label="搜尋網站" aria-expanded="false">⌕</button>
+
+   <button class="icon-btn" id="musicButton" type="button" aria-label="切換背景音樂" title="切換背景音樂">♫</button>
+
+   <button class="icon-btn menu-trigger" id="mobileButton" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
+
+  </div>
+
+ </div>
+
+ <div class="dropdown" id="dropdown" hidden><div class="dropdown-inner"><div class="dropdown-label" id="dropdownLabel"></div><div class="dropdown-links" id="dropdownLinks"></div></div></div>
+
+ <div class="search-panel" id="searchPanel" hidden><label for="siteSearch">搜尋803網站</label><input id="siteSearch" type="search" placeholder="輸入：男生、女生、課表、榮譽…" autocomplete="off"><div class="search-results" id="searchResults"></div></div>
+
+ <nav class="mobile-panel" id="mobilePanel" aria-label="手機導覽" hidden>
+
+  <a href="home.html" target="contentFrame">首頁</a><a href="boy.html" target="contentFrame">男生介紹</a><a href="girl.html" target="contentFrame">女生介紹</a><a href="teacher.html" target="contentFrame">導師介紹</a><a href="place.html" target="contentFrame">校園景點</a><a href="home.html#quick" target="contentFrame">快速功能</a><a href="home.html#class-info" target="contentFrame">課表與班級照片</a><a href="copyright.html" target="contentFrame">版權與隱私 ↗</a>
+
+ </nav>
+
+</header><main class="wrap"><div class="hero"><div class="eyebrow">CLASS 803 / GIRLS</div><h1>803 女生版巨星介紹</h1><p>13 位女孩，13 種閃閃發亮的青春故事。</p><div class="accent"></div></div><section class="grid" aria-label="女生個人檔案"><a class="card" href="girl-profile.html?id=31" target="contentFrame" aria-label="查看31號吳綺芮的個人檔案"><div class="avatar"><img src="g/girl31.jpg" data-girl="31" alt="吳綺芮的照片" loading="lazy"></div><span class="no">NO. 31</span><span class="name">31號 吳綺芮</span><span class="intro">我的興趣是買東西、逛街、吃東西、睡覺、滑手機、在家裡吃旺仔：）</span><span class="more">查看個人檔案 ↗</span></a>
 <a class="card" href="girl-profile.html?id=32" target="contentFrame" aria-label="查看32號林芊樺的個人檔案"><div class="avatar"><img src="g/girl32.jpg" data-girl="32" alt="林芊樺的照片" loading="lazy"></div><span class="no">NO. 32</span><span class="name">32號 林芊樺</span><span class="intro">是一個 i 人，性格內向，興趣是聽歌～</span><span class="more">查看個人檔案 ↗</span></a>
 <a class="card" href="girl-profile.html?id=33" target="contentFrame" aria-label="查看33號邱淽晴的個人檔案"><div class="avatar"><img src="g/girl33.jpg" data-girl="33" alt="邱淽晴的照片" loading="lazy"></div><span class="no">NO. 33</span><span class="name">33號 邱淽晴</span><span class="intro">ˇ我是嚴成玹老婆ˊ</span><span class="more">查看個人檔案 ↗</span></a>
 <a class="card" href="girl-profile.html?id=34" target="contentFrame" aria-label="查看34號徐已昕的個人檔案"><div class="avatar"><img src="g/girl34.jpg" data-girl="34" alt="徐已昕的照片" loading="lazy"></div><span class="no">NO. 34</span><span class="name">34號 徐已昕</span><span class="intro">我是韓維辰老婆</span><span class="more">查看個人檔案 ↗</span></a>
@@ -39,4 +105,36 @@ Have a nice day</span><span class="more">查看個人檔案 ↗</span></a>
 喜歡跳舞、拉小提琴和彈吉他
 就是妥妥的追星女</span><span class="more">查看個人檔案 ↗</span></a>
 <a class="card" href="girl-profile.html?id=42" target="contentFrame" aria-label="查看42號賴豬頭的個人檔案"><div class="avatar"><img src="g/girl42.jpg" data-girl="42" alt="賴豬頭的照片" loading="lazy"></div><span class="no">NO. 42</span><span class="name">42號 賴豬頭</span><span class="intro">我是哈密瓜老公，哈佛碩士、牛津博士。</span><span class="more">查看個人檔案 ↗</span></a>
-<a class="card" href="girl-profile.html?id=43" target="contentFrame" aria-label="查看43號𝒟𝓇.ℬℬ𝒞的個人檔案"><div class="avatar"><img src="" data-girl="43" alt="𝒟𝓇.ℬℬ𝒞的照片" loading="lazy"></div><span class="no">NO. 43</span><span class="name">43號 𝒟𝓇.ℬℬ𝒞</span><span class="intro">博士，懂得都懂，興趣是撞球、畫畫、打排球。</span><span class="more">查看個人檔案 ↗</span></a></section></main><footer class="foot">© 2026 803 株式會社. <a href="home.html" target="contentFrame">返回首頁</a><a href="copyright.html" target="contentFrame">版權與隱私</a></footer><script src="aurora.js" defer></script><script>document.getElementById('music').addEventListener('click',()=>{try{if(window.parent!==window && typeof window.parent.toggleBgm==='function'){window.parent.toggleBgm();return}}catch(e){}alert('請從網站首頁入口開啟背景音樂。')});document.querySelectorAll('img[data-girl]').forEach(img=>{const n=img.dataset.girl;const paths=['g/girl'+n+'.jpg','girl'+n+'.jpg','g/girl'+n+'.png','girl'+n+'.png'];let i=0;img.addEventListener('error',()=>{i++;if(i<paths.length){img.src=paths[i]}else{img.removeAttribute('src');img.alt='照片尚未上傳';img.style.background='linear-gradient(135deg,#483751,#294c58)'}})});</script></body></html>
+<a class="card" href="girl-profile.html?id=43" target="contentFrame" aria-label="查看43號𝒟𝓇.ℬℬ𝒞的個人檔案"><div class="avatar"><img src="g/girl43.jpg" data-girl="43" alt="𝒟𝓇.ℬℬ𝒞的照片" loading="lazy"></div><span class="no">NO. 43</span><span class="name">43號 𝒟𝓇.ℬℬ𝒞</span><span class="intro">博士，懂得都懂，興趣是撞球、畫畫、打排球。</span><span class="more">查看個人檔案 ↗</span></a></section></main><footer class="foot">© 2026 803 株式會社. <a href="home.html" target="contentFrame">返回首頁</a><a href="copyright.html" target="contentFrame">版權與隱私</a></footer><script>
+
+(()=>{
+
+ const menus={people:{label:'PEOPLE / 班級成員',links:[['男生介紹','boy.html','14位同學'],['女生介紹','girl.html','13位同學'],['導師介紹','teacher.html','認識我們的導師']]},life:{label:'LIFE / 班級生活',links:[['班級課表','home.html#class-info','每週課程'],['班級合照','home.html#class-photo','共同回憶'],['班級榮譽','home.html#news','英語歌唱比賽']]},campus:{label:'CAMPUS / 校園探索',links:[['校園景點','place.html','探索銘傳國中'],['班級課表','home.html#class-info','查看課表']]} };
+
+ const dropdown=document.getElementById('dropdown'),dropdownLabel=document.getElementById('dropdownLabel'),dropdownLinks=document.getElementById('dropdownLinks');
+
+ const toggles=[...document.querySelectorAll('.nav-toggle')];
+
+ function closeMenus(){dropdown.hidden=true;toggles.forEach(b=>b.setAttribute('aria-expanded','false'))}
+
+ toggles.forEach(btn=>btn.addEventListener('click',()=>{const was=btn.getAttribute('aria-expanded')==='true';closeMenus();if(was)return;const menu=menus[btn.dataset.menu];dropdownLabel.textContent=menu.label;dropdownLinks.replaceChildren();menu.links.forEach(([label,url,desc])=>{const a=document.createElement('a');a.href=url;a.target='contentFrame';a.textContent=label;const small=document.createElement('small');small.textContent=desc;a.appendChild(small);a.addEventListener('click',closeMenus);dropdownLinks.appendChild(a)});dropdown.hidden=false;btn.setAttribute('aria-expanded','true')}));
+
+ const searchButton=document.getElementById('searchButton'),searchPanel=document.getElementById('searchPanel'),siteSearch=document.getElementById('siteSearch'),searchResults=document.getElementById('searchResults');
+
+ const searchable=[['首頁','home.html','803 株式會社'],['男生介紹','boy.html','男生 同學'],['女生介紹','girl.html','女生 同學'],['導師介紹','teacher.html','老師 導師'],['校園景點','place.html','校園 銘傳 景點'],['班級課表','home.html#class-info','課表 課程'],['班級照片','home.html#class-photo','合照 回憶'],['英語歌唱榮譽','home.html#news','比賽 特優 第三名'],['版權與隱私','copyright.html','著作權 肖像 照片 音樂 個資']];
+
+ function renderSearch(){const q=siteSearch.value.trim().toLowerCase();searchResults.replaceChildren();if(!q){const p=document.createElement('p');p.textContent='搜尋頁面名稱或關鍵字。';searchResults.append(p);return}const found=searchable.filter(x=>x.join(' ').toLowerCase().includes(q));if(!found.length){const p=document.createElement('p');p.textContent='找不到符合的項目。';searchResults.append(p);return}found.forEach(([name,url])=>{const a=document.createElement('a');a.textContent=name+' ↗';a.href=url;a.target='contentFrame';a.addEventListener('click',()=>{searchPanel.hidden=true;searchButton.setAttribute('aria-expanded','false')});searchResults.append(a)})}
+
+ searchButton.addEventListener('click',()=>{const open=searchPanel.hidden;searchPanel.hidden=!open;searchButton.setAttribute('aria-expanded',String(open));closeMenus();if(open){siteSearch.focus();renderSearch()}});siteSearch.addEventListener('input',renderSearch);
+
+ const mobileButton=document.getElementById('mobileButton'),mobilePanel=document.getElementById('mobilePanel');mobileButton.addEventListener('click',()=>{mobilePanel.hidden=!mobilePanel.hidden;mobileButton.setAttribute('aria-expanded',String(!mobilePanel.hidden));closeMenus()});mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobilePanel.hidden=true;mobileButton.setAttribute('aria-expanded','false')}));
+
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenus();searchPanel.hidden=true;mobilePanel.hidden=true;searchButton.setAttribute('aria-expanded','false');mobileButton.setAttribute('aria-expanded','false')}});
+
+ document.addEventListener('click',e=>{if(!e.target.closest('.topbar')){closeMenus();searchPanel.hidden=true;searchButton.setAttribute('aria-expanded','false')}});
+
+ const musicButton=document.getElementById('musicButton');function findAudio(){try{return window.parent.document.querySelector('audio')}catch{return null}}function updateMusic(){const a=findAudio();musicButton.textContent=a&&!a.paused?'♫':'♪';musicButton.title=a?(a.paused?'播放背景音樂':'暫停背景音樂'):'請在網站主頁開啟音樂';musicButton.setAttribute('aria-label',musicButton.title)}musicButton.addEventListener('click',()=>{try{if(window.parent!==window && typeof window.parent.toggleBgm==='function'){window.parent.toggleBgm();setTimeout(updateMusic,120);return}}catch(e){}const a=findAudio();if(!a){alert('請從 index.html 進入網站，才能控制背景音樂。');return}if(a.paused){a.play().catch(()=>alert('瀏覽器阻止音樂播放，請再次點擊音樂鍵。'))}else{a.pause()}setTimeout(updateMusic,120)});updateMusic();
+
+})();
+
+</script><script src="aurora.js" defer></script></body></html>

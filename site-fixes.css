@@ -1,0 +1,31 @@
+/* 803 cross-page visual consistency; loaded after each page's inline styles. */
+html{overflow-x:hidden}
+body{overflow-x:hidden}
+.aurora-backdrop{position:fixed!important;inset:0!important;z-index:0!important;pointer-events:none!important}
+#aurora-particles{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;z-index:1!important;display:block!important;pointer-events:none!important}
+body:before{pointer-events:none}
+.topbar{position:sticky!important;top:0!important;z-index:100!important;background:rgba(29,45,40,.92)!important;backdrop-filter:blur(14px)}
+.topbar .top-inner{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;width:min(1260px,96%)!important;min-height:64px!important;margin:auto!important;flex-wrap:nowrap!important}
+.topbar .brand{flex-shrink:0!important;white-space:nowrap!important;font-size:19px!important;text-decoration:none!important;color:#f5f1e8!important}
+.topbar .desktop-nav{display:flex;align-items:center;gap:6px;min-width:0}
+.topbar .nav-actions{display:flex!important;align-items:center!important;gap:7px!important;margin-left:auto!important;flex-shrink:0!important}
+.topbar .icon-btn{display:grid;place-items:center;flex:none}
+.topbar .dropdown[hidden],.topbar .search-panel[hidden],.topbar .mobile-panel[hidden]{display:none!important}
+.topbar .dropdown,.topbar .search-panel,.topbar .mobile-panel{z-index:130}
+.topbar .nav-link,.topbar .nav-toggle{white-space:nowrap}
+.topbar .menu-trigger{display:none}
+.topbar + main,main.wrap,.wrap,.page,footer{position:relative;z-index:3}
+@media(max-width:850px){
+ .topbar .desktop-nav{display:none!important}
+ .topbar .menu-trigger{display:grid!important}
+ .topbar .top-inner{width:100%!important;padding:8px 15px!important;min-height:60px!important}
+ .topbar .brand{font-size:17px!important}
+ .topbar .nav-actions{gap:6px!important}
+ .topbar .icon-btn{width:37px!important;height:37px!important}
+ .topbar .mobile-panel:not([hidden]){display:flex!important;position:relative!important;flex-direction:column!important}
+ #aurora-particles{width:100vw!important;height:100dvh!important;visibility:visible!important;opacity:1!important}
+}
+/* Legacy girls' profile nav matches the same single-row desktop / mobile layout. */
+.topbar .nav{max-width:1260px;min-height:64px;display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
+.topbar .navlinks{margin-left:auto;display:flex;align-items:center;justify-content:flex-end;gap:5px;flex-wrap:wrap}
+@media(max-width:850px){.topbar .nav{padding:10px 14px;flex-wrap:wrap}.topbar .navlinks{width:100%;justify-content:center;gap:4px}.topbar .navlinks a{font-size:12px;padding:6px}}

@@ -1,0 +1,38 @@
+803株式會社｜全面校準報告（2026-10-13）
+
+來源：本次上傳的 803-class.zip。
+
+修正：
+1. 將根目錄男生照片移入 b/，女生照片移入 g/，避免照片路徑錯誤。
+2. 將男生清單與個人頁的資料來源統一為 boys-data.js，避免同學介紹出現兩個版本。
+3. 清除 HTML/CSS/JS 中的 NBSP 特殊空白，避免 CSS/JavaScript 解析錯誤。
+4. 將共用導覽列樣式放在頁面內嵌樣式之後載入，並加入 site-fixes.css 處理版面與手機導覽列。
+5. 女生照片統一使用 photo-fallback.js 依序嘗試 g/、根目錄與不同副檔名；缺檔顯示 SVG。
+6. 補入原 ZIP 缺少的 place.html 暫存頁，並新增 missing-photo.svg。
+7. 保留原有極光、星空、流星、搜尋、背景音樂、人物介紹。
+8. 排除 .git 資料夾，不覆蓋現有 GitHub Desktop 版本紀錄。
+
+未提供的照片：
+b/boy7.jpg
+b/boy10.jpg
+b/boy14.jpg
+g/girl32.jpg
+g/girl34.jpg
+g/girl36.jpg
+g/girl39.jpg
+g/girl43.jpg
+
+其他缺少的素材：music.mp3、22/g/1 (4).jpg（班級合照），以及校園景點的原始內容。
+
+注意：此為檔案結構、語法及靜態一致性校準；手機實機顯示及互動功能需部署後測試。
+部署：先備份，解壓縮後將「803-class」資料夾內所有檔案與 b/、g/ 複製到 GitHub Desktop 的儲存庫根目錄，Commit，再 Push origin。
+
+靜態檢查結果：
+1_HTML標籤與檔案: 通過
+2_照片整理: 通過
+3_特殊空白: 通過
+4_男女頁共用樣式: 通過
+5_照片備援與資料: 通過
+6_無Git歷史覆蓋: 通過
+7_JavaScript語法: 通過
+8_內嵌JS語法: 通過
