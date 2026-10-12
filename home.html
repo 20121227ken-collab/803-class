@@ -65,7 +65,8 @@
 .marquee-track{display:flex;width:max-content;align-items:center;animation:news-scroll 30s linear infinite;will-change:transform}
 .marquee-item{display:block;flex:0 0 auto;width:max-content;padding:0 52px 0 12px;white-space:nowrap;font-size:14px;font-weight:500;line-height:66px;color:#f4f2f4;letter-spacing:.015em}
 .marquee-star{color:#c9e7df;padding:0 18px}
-.announcement-marquee:hover .marquee-track,.announcement-marquee:focus-within .marquee-track{animation-play-state:paused}
+/* 只有支援真正滑鼠 hover 的裝置才暫停；避免手機點擊後永久停止 */
+@media (hover:hover) and (pointer:fine){.announcement-marquee:hover .marquee-track{animation-play-state:paused}}
 @keyframes news-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:550px){.announcement-marquee{flex-direction:row;align-items:center;min-height:58px;margin-bottom:40px}.announcement-marquee .announcement-label{padding:0 12px;font-size:10px}.marquee-item{line-height:58px;font-size:13px;padding-right:34px}}
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee-window{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.marquee-item:nth-child(2){display:none}}
